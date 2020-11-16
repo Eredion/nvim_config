@@ -1,4 +1,3 @@
-
 call plug#begin('~/.config/nvim/plugged')
 	"Conquer of completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -33,11 +32,18 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set smartindent
 set nowrap
-set nu
 set smartcase
 set noswapfile
 set nobackup
 set incsearch
+
+"Hybrid line numbers (switch in insert mode)
+:set number relativenumber
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
 
 "Window splitting/movement
 function! WinMove(key)
