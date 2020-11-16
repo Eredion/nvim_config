@@ -11,7 +11,9 @@ Plug 'machakann/vim-sandwich'
 	"Color theme
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
-
+"Auto save
+Plug '907th/vim-auto-save'
+call plug#end()
 
 if (empty($TMUX))
 	call plug#end()
@@ -88,3 +90,6 @@ nmap <leader>rn <Plug>(coc-rename)
 nnoremap <silent> <space>d :<C-u>CocList diagnostics<cr>
 "manage extensions.
 nnoremap <silent> <space>e :<C-u>CocList extensions<cr>
+
+"Enable autosave
+let g:auto_save = 1 
