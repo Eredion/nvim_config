@@ -39,6 +39,9 @@ set noswapfile
 set nobackup
 set incsearch
 
+" Use ESC to exit insert mode in :term
+tnoremap <Esc> <C-\><C-n>
+
 "Hybrid line numbers (switch in insert mode)
 :set number relativenumber
 :augroup numbertoggle
